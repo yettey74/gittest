@@ -4,6 +4,8 @@
 #include <iostream>
 #include "headers/OptionsScreen.h"  // Include the OptionsScreen header
 #include "headers/GameScreen.h"  // Include the OptionsScreen header
+// #include "headers/AudioManager.h"
+#include "headers/NetworkManager.h" // Include the NetworkManager header
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 
@@ -83,13 +85,27 @@ int main() {
     GameScreen gameScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
 
     // Load and play the audio
-    sf::Music music;
-    if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
-        std::cerr << "Error loading audio file\n";
+        // sf::Music music;
+        // if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
+        //     std::cerr << "Error loading audio file\n";
+        //     return -1;
+        // }
+        // music.setLoop(true);
+        // music.play();
+
+    // Create and set up the audio manager
+    AudioManager audioManager;
+    if (!audioManager.loadMusic("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
         return -1;
     }
-    music.setLoop(true);
-    music.play();
+    audioManager.setMusicLoop(true);
+    audioManager.playMusic();
+
+    // Create and set up the network manager
+    NetworkManager networkManager;
+    if (!networkManager.connectToServer("127.0.0.1", 53000)) {
+        return -1;
+    }
 
     ScreenType currentScreen = MAIN_MENU;
 

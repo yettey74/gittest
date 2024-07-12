@@ -12,6 +12,7 @@ add_executable(main
                 ../src/main.cpp 
                 ../src/GameScreen.cpp
                 ../src/OptionsScreen.cpp
+                ../src/NetworkManager.cpp # Include NetworkManager.cpp
                 ../version.rc                
             )
 
@@ -30,7 +31,23 @@ target_include_directories(
 set(SFML_DIR "C:/SFML4VC17/lib/cmake/SFML")
 
 # Find the SFML package
-find_package(SFML 2.6.1 REQUIRED COMPONENTS graphics system window audio )
+find_package(
+    SFML 2.6.1 
+    REQUIRED COMPONENTS 
+    graphics 
+    system 
+    window 
+    audio 
+    network 
+)
 
 # Link SFML libraries to the executable
-target_link_libraries(main PRIVATE sfml-graphics sfml-system sfml-window sfml-audio )
+target_link_libraries(
+    main 
+    PRIVATE 
+    sfml-graphics 
+    sfml-system 
+    sfml-window 
+    sfml-audio 
+    sfml-network 
+)
