@@ -11,11 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(main
                 ../src/main.cpp 
                 ../src/GameScreen.cpp
-                ../headers/GameScreen.h
                 ../src/OptionsScreen.cpp
-                ../headers/OptionsScreen.h
-                ../version.rc
-                
+                ../src/headers/GameScreen.h
+                ../src/headers/OptionsScreen.h
+                ../version.rc                
             )
 
 # Set the path to SFML
