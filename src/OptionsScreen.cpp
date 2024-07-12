@@ -1,4 +1,4 @@
-#include "OptionsScreen.h"
+#include "../headers/OptionsScreen.h"
 
 OptionsScreen::OptionsScreen(float width, float height) {
     // Load a font

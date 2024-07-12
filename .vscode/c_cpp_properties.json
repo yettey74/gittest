@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/SFML4VC17/include",
-                "${workspaceFolder}/headers"
+                "${workspaceFolder}/headers",
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",

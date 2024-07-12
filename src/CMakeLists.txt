@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Add the executable target with source files
 add_executable(main
                 ../src/main.cpp 
-                ../src/OptionsScreeen.cpp 
+                ../src/OptionsScreen.cpp
                 ../headers/OptionsScreen.h
                 ../version.rc
             )

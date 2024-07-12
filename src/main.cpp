@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
-#include <OptionsScreen.h> // Include the new OptionsScreen header
+#include "../headers/OptionsScreen.h"  // Include the OptionsScreen header
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 

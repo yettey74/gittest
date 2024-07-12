@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "C:/project/cpp/gittest/src"
+    "cmake.sourceDirectory": "C:/project/cpp/gittest/src",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
