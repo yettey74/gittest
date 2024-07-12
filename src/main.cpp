@@ -84,7 +84,7 @@ int main() {
 
     // Load and play the audio
     sf::Music music;
-    if (!music.openFromFile("audio/orchestral.mp3")) {
+    if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
         std::cerr << "Error loading audio file\n";
         return -1;
     }
