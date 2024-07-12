@@ -1,6 +1,6 @@
 # ninja log v6
 69	266	7424732589138611	CMakeFiles/main.dir/C_/project/cpp/gittest/version.rc.res	fb4aab5875a1cd41
-36	1603	7424732588872849	CMakeFiles/main.dir/main.cpp.obj	c0d5b4b496b94281
-1646	1998	7424733492716803	main.exe	d07015a4475aa765
-49	1634	7424733476810295	CMakeFiles/main.dir/OptionsScreen.cpp.obj	367a2596fd63dfbe
-36	1642	7424733476661621	CMakeFiles/main.dir/GameScreen.cpp.obj	388c8419b3ea2091
+38	1818	7424862215499853	CMakeFiles/main.dir/main.cpp.obj	c0d5b4b496b94281
+1823	2225	7424862233208524	main.exe	d07015a4475aa765
+54	1687	7424852340424189	CMakeFiles/main.dir/OptionsScreen.cpp.obj	367a2596fd63dfbe
+49	2326	7424861805062437	CMakeFiles/main.dir/GameScreen.cpp.obj	388c8419b3ea2091
