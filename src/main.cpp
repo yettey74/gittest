@@ -2,6 +2,7 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 #include "../headers/OptionsScreen.h"  // Include the OptionsScreen header
+#include "../headers/GameScreen.h"  // Include the GameScreen header
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 
@@ -78,6 +79,7 @@ int main() {
     // Create the main menu and options screen
     MainMenu mainMenu(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     OptionsScreen optionsScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
+    GameScreen gameScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
 
     ScreenType currentScreen = MAIN_MENU;
 
@@ -99,6 +101,7 @@ int main() {
                         int selectedItem = mainMenu.GetPressedItem();
                         if (selectedItem == 0) {
                             std::cout << "Start Game selected" << std::endl;
+                            currentScreen = GAME;
                         } else if (selectedItem == 1) {
                             std::cout << "Options selected" << std::endl;
                             currentScreen = OPTIONS;
@@ -129,6 +132,8 @@ int main() {
             mainMenu.draw(window);
         } else if (currentScreen == OPTIONS) {
             optionsScreen.draw(window);
+        }else if (currentScreen == OPTIONS) {
+            gameScreen.draw(window);
         }
 
         // Display what was drawn
