@@ -22,7 +22,7 @@ target_include_directories(
     ${CMAKE_SOURCE_DIR}/src/headers
     ${CMAKE_SOURCE_DIR}/src/audio
     ${CMAKE_SOURCE_DIR}/src/network
-    PRIVATE
+    #PRIVATE
     "C:/SFML4GCC/include"
 )
 
@@ -33,4 +33,4 @@ set(SFML_DIR "C:/SFML4VC17/lib/cmake/SFML")
 find_package(SFML 2.6.1 REQUIRED COMPONENTS graphics system window audio )
 
 # Link SFML libraries to the executable
-target_link_libraries(main sfml-graphics sfml-system sfml-window sfml-audio )
+target_link_libraries(main PRIVATE sfml-graphics sfml-system sfml-window sfml-audio )
