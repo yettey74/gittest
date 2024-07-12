@@ -1,4 +1,4 @@
 # ninja log v6
-16	301	7424595600716181	CMakeFiles/main.dir/C_/project/cpp/gittest/version.rc.res	fb4aab5875a1cd41
-4	1617	7424595600558685	CMakeFiles/main.dir/main.cpp.obj	c0d5b4b496b94281
-1622	2664	7424595616734422	main.exe	31243acebd454fdf
+20	215	7424607164310295	CMakeFiles/main.dir/C_/project/cpp/gittest/version.rc.res	fb4aab5875a1cd41
+8	1814	7424607164170825	CMakeFiles/main.dir/main.cpp.obj	c0d5b4b496b94281
+1821	2504	7424607182290775	main.exe	31243acebd454fdf
