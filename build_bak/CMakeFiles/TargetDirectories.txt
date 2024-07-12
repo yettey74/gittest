@@ -1,3 +1,0 @@
-C:/project/cpp/gittest/build/CMakeFiles/main.dir
-C:/project/cpp/gittest/build/CMakeFiles/edit_cache.dir
-C:/project/cpp/gittest/build/CMakeFiles/rebuild_cache.dir
