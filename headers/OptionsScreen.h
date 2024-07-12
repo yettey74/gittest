@@ -14,6 +14,12 @@ public:
 private:
     sf::Font font;
     sf::Text optionsText;
+    bool returnToMainMenu = false; // Flag to indicate if we should return to main menu
+    TopMenu topMenu;
+
+public:
+    bool shouldReturnToMainMenu() const; // Getter for returnToMainMenu flag
+    void reset(); // Reset screen-specific state
 };
 
 #endif // OPTIONSSCREEN_H

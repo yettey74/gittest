@@ -15,6 +15,7 @@ add_executable(main
                 ../src/OptionsScreen.cpp
                 ../headers/OptionsScreen.h
                 ../version.rc
+                
             )
 
 # Set the path to SFML

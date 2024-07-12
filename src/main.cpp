@@ -113,6 +113,7 @@ int main() {
                         int selectedItem = mainMenu.getMenuItemIndexAtPosition(mousePos);
                         if (selectedItem == 0) {
                             std::cout << "Start Game selected" << std::endl;
+                            currentScreen = GAME;
                         } else if (selectedItem == 1) {
                             std::cout << "Options selected" << std::endl;
                             currentScreen = OPTIONS;
