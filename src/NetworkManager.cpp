@@ -1,4 +1,4 @@
-#include "NetworkManager.h"
+#include "headers/NetworkManager.h"
 
 NetworkManager::NetworkManager() {
     // Initialize network manager

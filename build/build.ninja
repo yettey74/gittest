@@ -73,6 +73,14 @@ build CMakeFiles\main.dir\OptionsScreen.cpp.obj: CXX_COMPILER__main_unscanned_De
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
 
+build CMakeFiles\main.dir\NetworkManager.cpp.obj: CXX_COMPILER__main_unscanned_Debug C$:\project\cpp\gittest\src\NetworkManager.cpp || cmake_object_order_depends_target_main
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++latest
+  INCLUDES = -IC:\project\cpp\gittest\src\src\headers -IC:\project\cpp\gittest\src\src\audio -IC:\project\cpp\gittest\src\src\network -IC:\SFML4GCC\include -external:IC:\SFML4VC17\include -external:W0
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+
 build CMakeFiles\main.dir\C_\project\cpp\gittest\version.rc.res: RC_COMPILER__main_unscanned_Debug C$:\project\cpp\gittest\version.rc || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles\main.dir\C_\project\cpp\gittest\version.rc.res.d
   FLAGS = -DWIN32 -D_DEBUG
@@ -90,10 +98,10 @@ build CMakeFiles\main.dir\C_\project\cpp\gittest\version.rc.res: RC_COMPILER__ma
 #############################################
 # Link the executable main.exe
 
-build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles\main.dir\main.cpp.obj CMakeFiles\main.dir\GameScreen.cpp.obj CMakeFiles\main.dir\OptionsScreen.cpp.obj CMakeFiles\main.dir\C_\project\cpp\gittest\version.rc.res | C$:\SFML4VC17\lib\sfml-graphics-d.lib C$:\SFML4VC17\lib\sfml-window-d.lib C$:\SFML4VC17\lib\sfml-audio-d.lib C$:\SFML4VC17\lib\sfml-system-d.lib
+build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles\main.dir\main.cpp.obj CMakeFiles\main.dir\GameScreen.cpp.obj CMakeFiles\main.dir\OptionsScreen.cpp.obj CMakeFiles\main.dir\NetworkManager.cpp.obj CMakeFiles\main.dir\C_\project\cpp\gittest\version.rc.res | C$:\SFML4VC17\lib\sfml-graphics-d.lib C$:\SFML4VC17\lib\sfml-window-d.lib C$:\SFML4VC17\lib\sfml-audio-d.lib C$:\SFML4VC17\lib\sfml-network-d.lib C$:\SFML4VC17\lib\sfml-system-d.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = C:\SFML4VC17\lib\sfml-graphics-d.lib  C:\SFML4VC17\lib\sfml-window-d.lib  C:\SFML4VC17\lib\sfml-audio-d.lib  C:\SFML4VC17\lib\sfml-system-d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = C:\SFML4VC17\lib\sfml-graphics-d.lib  C:\SFML4VC17\lib\sfml-window-d.lib  C:\SFML4VC17\lib\sfml-audio-d.lib  C:\SFML4VC17\lib\sfml-network-d.lib  C:\SFML4VC17\lib\sfml-system-d.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
