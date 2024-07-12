@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set the project name and language
-project(base LANGUAGES CXX)
+project(gittest LANGUAGES CXX)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add the executable target with source files
-add_executable(main ./src/main.cpp ./version.rc)
+add_executable(main ../src/main.cpp ../version.rc)
 
 # Set the path to SFML
 set(SFML_DIR "C:/SFML4VC17/lib/cmake/SFML")
