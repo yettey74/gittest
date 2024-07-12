@@ -1,4 +1,4 @@
-#include <headers/GameScreen.h>
+#include "headers/GameScreen.h"
 
 GameScreen::GameScreen(float width, float height) {
 

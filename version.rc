@@ -19,12 +19,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "WYSIWYG\0"
-            VALUE "FileDescription", "A Base template to with a 64bit pure environment\0"
+            VALUE "FileDescription", "A Base template to with a 64bit pure environment using C++23\0"
             VALUE "FileVersion", "1.0.0.0\0"
             VALUE "InternalName", "teddy\0"
             VALUE "LegalCopyright", "Copyright 2024\0"
             VALUE "OriginalFilename", "main.exe\0"
-            VALUE "ProductName", "T.E.D.D.Y\0"
+            VALUE "ProductName", "Bear\0"
             VALUE "ProductVersion", "1.0.0.0\0"
         END
     END

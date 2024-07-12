@@ -1,8 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
-#include <headers/OptionsScreen.h>  // Include the OptionsScreen header
-#include <headers/GameScreen.h>  // Include the OptionsScreen header
+#include "headers/OptionsScreen.h"  // Include the OptionsScreen header
+#include "headers/GameScreen.h"  // Include the OptionsScreen header
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 
@@ -80,6 +81,15 @@ int main() {
     MainMenu mainMenu(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     OptionsScreen optionsScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     GameScreen gameScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
+
+    // Load and play the audio
+    sf::Music music;
+    if (!music.openFromFile("audio/orchestral.mp3")) {
+        std::cerr << "Error loading audio file\n";
+        return -1;
+    }
+    music.setLoop(true);
+    music.play();
 
     ScreenType currentScreen = MAIN_MENU;
 

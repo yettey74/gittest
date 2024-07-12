@@ -1,0 +1,8 @@
+# ninja log v6
+49	235	7424954750749804	CMakeFiles/main.dir/C_/project/cpp/gittest/version.rc.res	f97ef7399d495567
+50	3562	7424946744630863	CMakeFiles/main.dir/GameScreen.cpp.obj	949a1630521025a3
+60	3567	7424946744636320	CMakeFiles/main.dir/OptionsScreen.cpp.obj	22650d5915da5baa
+37	3553	7424954750610334	CMakeFiles/main.dir/main.cpp.obj	8cb6ec9d413ed210
+3559	3985	7424954785742263	main.exe	30bdd76866bebc05
+37	3012	7424955841073325	CMakeFiles/main.dir/main.cpp.obj	8cb6ec9d413ed210
+3018	3373	7424955870873103	main.exe	30bdd76866bebc05
