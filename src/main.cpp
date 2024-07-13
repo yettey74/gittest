@@ -3,20 +3,19 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include <iostream>
-#include "headers/OptionsScreen.h"  // Include the OptionsScreen header
-#include "headers/GameScreen.h"  // Include the OptionsScreen header
-#include "headers/AudioManager.h" // Include the AudioManager header
-#include "headers/NetworkManager.h" // Include the NetworkManager header
-// #include "audio\orchestral.mp3" // Include the NetworkManager header
+#include "headers/OptionsScreen.h"
+#include "headers/GameScreen.h"
+#include "headers/AudioManager.h"
+#include "headers/NetworkManager.h"
+#include "headers/Time.h"
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 
 class MainMenu {
 public:
+
     MainMenu(float width, float height) {
-        // Load a font
         if (!font.loadFromFile("C:/windows/fonts/arial.ttf")) {
-            // handle error - cannot load font
             std::cerr << "Error loading font\n";
             return;
         }
@@ -24,12 +23,12 @@ public:
         menu[0].setFont(font);
         menu[0].setFillColor(sf::Color::Red);
         menu[0].setString("Start Game");
-        menu[0].setPosition(sf::Vector2f(width / 2.0f, height / (MAX_NUMBER_OF_ITEMS + 1.0f) * 1.0f));
+        menu[0].setPosition(sf::Vector2f(width / 2.0f, height / 3.0f));
 
         menu[1].setFont(font);
         menu[1].setFillColor(sf::Color::White);
         menu[1].setString("Options");
-        menu[1].setPosition(sf::Vector2f(width / 2.0f, height / (MAX_NUMBER_OF_ITEMS + 1.0f) * 2.0f));
+        menu[1].setPosition(sf::Vector2f(width / 2.0f, height / 2.0f));
 
         selectedItemIndex = 0;
     }
@@ -66,10 +65,10 @@ public:
                 return i;
             }
         }
-        return -1;  // No menu item at this position
+        return -1;
     }
 
-    private:
+private:
     int selectedItemIndex;
     sf::Font font;
     sf::Text menu[2];
@@ -77,48 +76,63 @@ public:
     static const int MAX_NUMBER_OF_ITEMS = 2;
 };
 
-int main() {
-    // Create a window
+int main() {    
+
+    Time gameClock;
+
+    // Set the initial year and month
+    // Set the initial year, month, and day
+    // gameClock.setCurrentYear(-400);
+    // gameClock.setCurrentMonth(1);   // Start from January
+    // gameClock.setCurrentDay(1);     // Start from the first day of the month
+
+    // Loop from the initial year, month, and day (400 BC, January, 1st) to the current year, month, and day
+    for (int year = -400; year <= gameClock.getCurrentYear(); ++year) {
+        for (int month = 1; month <= 12; ++month) {
+            int daysInMonth = gameClock.getDaysInMonth(month);
+            for (int day = 1; day <= daysInMonth; ++day) {
+                std::cout << "Day: ";
+                if (day < 10) {
+                    std::cout << "0";  // Ensure two-digit format (e.g., 01, 02, ..., 31)
+                }
+                std::cout << day << " ";
+
+                std::cout << "Month: ";
+                if (month < 10) {
+                    std::cout << "0";  // Ensure two-digit format (e.g., 01, 02, ..., 12)
+                }
+                std::cout << month << " ";
+                
+                std::cout << "Year: ";
+                if (year < 0) {
+                    std::cout << -year << " BC";
+                } else {
+                    std::cout << year;
+                }
+                std::cout << std::endl;
+
+                // Advance the day in your game logic
+                gameClock.advanceDay();
+            }
+            // Advance the month after printing all days in the month
+            gameClock.advanceSeason();  // Assuming each season corresponds to 3 months
+        }
+        // Advance the year after printing all months in the year
+        gameClock.advanceYear();
+    
+    return 0;
+    }
+
+
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Game");
 
-    // Create the main menu and options screen
     MainMenu mainMenu(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     OptionsScreen optionsScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
     GameScreen gameScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
 
-    // Load and play the audio
-        // sf::Music music;
-        // if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
-        //     std::cerr << "Error loading audio file\n";
-        //     return -1;
-        // }
-        // music.setLoop(true);
-        // music.play();
-
-    // Create and set up the audio manager
-        // AudioManager audioManager;
-        //  if (!audioManager.loadMusic("audio\\orchestral.mp3")) {
-        //      std::cerr << "Failed to load music" << std::endl; 
-        //      return 0;
-        // } else {
-        //      std::cout << "Loaded Music successfuly" << std::endl; 
-        //     audioManager.loadMusic("audio\\orchestral.mp3");
-        //     audioManager.setMusicLoop(true);
-        //     audioManager.playMusic();        
-        // }
-
-    // Create and set up the network manager
-        NetworkManager networkManager;
-        // if (!networkManager.connectToServer("127.0.0.1", 53000)) {
-        //     std::cerr << "Error Connecting to 127.0.0.1 on port 53000\n";
-        //     return -1;
-        // }
-
     ScreenType currentScreen = MAIN_MENU;
 
-    // Game loop
     while (window.isOpen()) {
-        // Handle events
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -133,10 +147,8 @@ int main() {
                     } else if (event.key.code == sf::Keyboard::Enter) {
                         int selectedItem = mainMenu.GetPressedItem();
                         if (selectedItem == 0) {
-                            //std::cout << "Start Game selected" << std::endl;
                             currentScreen = GAME;
                         } else if (selectedItem == 1) {
-                            //std::cout << "Options selected" << std::endl;
                             currentScreen = OPTIONS;
                         }
                     }
@@ -145,30 +157,35 @@ int main() {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
                         int selectedItem = mainMenu.getMenuItemIndexAtPosition(mousePos);
                         if (selectedItem == 0) {
-                            //std::cout << "Start Game selected" << std::endl;
                             currentScreen = GAME;
                         } else if (selectedItem == 1) {
-                            //std::cout << "Options selected" << std::endl;
                             currentScreen = OPTIONS;
                         }
                     }
                 }
-            } 
+            } else if (currentScreen == GAME) {
+                gameScreen.handleEvent(event, window);
+                if (gameScreen.shouldReturnToMainMenu()) {
+                    currentScreen = MAIN_MENU;
+                    gameScreen.reset();
+                }
+            } else if (currentScreen == OPTIONS) {
+                optionsScreen.handleEvent(event, window);
+                if (optionsScreen.shouldReturnToMainMenu()) {
+                    currentScreen = MAIN_MENU;
+                    optionsScreen.reset();
+                }
+            }
         }
 
-        // Clear the window
         window.clear();
-
-        // Draw the appropriate screen
         if (currentScreen == MAIN_MENU) {
             mainMenu.draw(window);
         } else if (currentScreen == OPTIONS) {
             optionsScreen.draw(window);
-        } else if (currentScreen == GAME ) {
+        } else if (currentScreen == GAME) {
             gameScreen.draw(window);
         }
-
-        // Display what was drawn
         window.display();
     }
 

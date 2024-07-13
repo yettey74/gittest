@@ -1,11 +1,8 @@
 #include "headers/OptionsScreen.h"
 
 OptionsScreen::OptionsScreen(float width, float height) {
-
-    // Initialize options screen here, e.g., load font
     if (!font.loadFromFile("C:/windows/fonts/arial.ttf")) {
         std::cerr << "Error loading font\n";
-        // Handle error
     }
 
     optionsText.setFont(font);
@@ -18,14 +15,10 @@ OptionsScreen::OptionsScreen(float width, float height) {
 }
 
 void OptionsScreen::draw(sf::RenderWindow &window) {
-    window.clear();
     window.draw(optionsText);
-    window.display();
 }
 
 void OptionsScreen::handleEvent(const sf::Event &event, sf::RenderWindow &window) {
-    // Handle events specific to the options screen
-    // For example, detect if Escape key is pressed
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
         returnToMainMenu = true;
     }

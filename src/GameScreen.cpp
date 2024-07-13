@@ -1,11 +1,8 @@
 #include "headers/GameScreen.h"
 
 GameScreen::GameScreen(float width, float height) {
-
-    // Initialize game screen here, e.g., load font
     if (!font.loadFromFile("C:/windows/fonts/arial.ttf")) {
         std::cerr << "Error loading font\n";
-        // Handle error
     }
 
     gameText.setFont(font);
@@ -18,14 +15,10 @@ GameScreen::GameScreen(float width, float height) {
 }
 
 void GameScreen::draw(sf::RenderWindow &window) {
-    window.clear();
     window.draw(gameText);
-    window.display();
 }
 
 void GameScreen::handleEvent(const sf::Event &event, sf::RenderWindow &window) {
-    // Handle events specific to the game screen
-    // For example, detect if Escape key is pressed
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
         returnToMainMenu = true;
     }
