@@ -7,6 +7,7 @@
 #include "headers/GameScreen.h"  // Include the OptionsScreen header
 #include "headers/AudioManager.h" // Include the AudioManager header
 #include "headers/NetworkManager.h" // Include the NetworkManager header
+// #include "audio\orchestral.mp3" // Include the NetworkManager header
 
 enum ScreenType { MAIN_MENU, GAME, OPTIONS };
 
@@ -68,7 +69,7 @@ public:
         return -1;  // No menu item at this position
     }
 
-private:
+    private:
     int selectedItemIndex;
     sf::Font font;
     sf::Text menu[2];
@@ -86,27 +87,32 @@ int main() {
     GameScreen gameScreen(static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
 
     // Load and play the audio
-        sf::Music music;
-        if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
-            std::cerr << "Error loading audio file\n";
-            return -1;
-        }
-        music.setLoop(true);
-        music.play();
+        // sf::Music music;
+        // if (!music.openFromFile("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
+        //     std::cerr << "Error loading audio file\n";
+        //     return -1;
+        // }
+        // music.setLoop(true);
+        // music.play();
 
     // Create and set up the audio manager
         // AudioManager audioManager;
-        // if (!audioManager.loadMusic("C:\\project\\cpp\\gittest\\src\\audio\\orchestral.mp3")) {
-        //     return -1;
+        //  if (!audioManager.loadMusic("audio\\orchestral.mp3")) {
+        //      std::cerr << "Failed to load music" << std::endl; 
+        //      return 0;
+        // } else {
+        //      std::cout << "Loaded Music successfuly" << std::endl; 
+        //     audioManager.loadMusic("audio\\orchestral.mp3");
+        //     audioManager.setMusicLoop(true);
+        //     audioManager.playMusic();        
         // }
-        // audioManager.setMusicLoop(true);
-        // audioManager.playMusic();
 
     // Create and set up the network manager
-        // NetworkManager networkManager;
-        // if (!networkManager.connectToServer("127.0.0.1", 53000)) {
-        //     return -1;
-        // }
+        NetworkManager networkManager;
+        if (!networkManager.connectToServer("127.0.0.1", 53000)) {
+            std::cerr << "Error Connecting to 127.0.0.1 on port 5300\n";
+            return -1;
+        }
 
     ScreenType currentScreen = MAIN_MENU;
 

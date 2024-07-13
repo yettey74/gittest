@@ -12,7 +12,8 @@ add_executable(main
                 ../src/main.cpp 
                 ../src/GameScreen.cpp
                 ../src/OptionsScreen.cpp
-                ../src/NetworkManager.cpp # Include NetworkManager.cpp
+                ../src/NetworkManager.cpp
+                ../src/AudioManager.cpp
                 ../version.rc                
             )
 
@@ -51,3 +52,12 @@ target_link_libraries(
     sfml-audio 
     sfml-network 
 )
+
+# Ensure orchestral.mp3 is copied to the output directory
+# add_custom_command(
+#     TARGET gittest POST_BUILD
+#     COMMAND ${CMAKE_COMMAND} -E copy
+#     ${CMAKE_SOURCE_DIR}/audio/orchestral.mp3
+#     ${CMAKE_BINARY_DIR}/orchestral.mp3
+#     COMMENT "Copying orchestral.mp3 to build directory"
+# )
