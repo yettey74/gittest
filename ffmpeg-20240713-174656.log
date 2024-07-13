@@ -1,0 +1,42 @@
+ffmpeg started on 2024-07-13 at 17:46:56
+Report written to "ffmpeg-20240713-174656.log"
+Log level: 48
+Command line:
+"C:\\ffmpeg\\bin\\ffmpeg.exe" -y -report -r 60 -f image2pipe -vcodec ppm -i pipe: -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 output.mp4
+ffmpeg version 7.0.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 13.2.0 (Rev5, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59.  8.100 / 59.  8.100
+  libavcodec     61.  3.100 / 61.  3.100
+  libavformat    61.  1.100 / 61.  1.100
+  libavdevice    61.  1.100 / 61.  1.100
+  libavfilter    10.  1.100 / 10.  1.100
+  libswscale      8.  1.100 /  8.  1.100
+  libswresample   5.  1.100 /  5.  1.100
+  libpostproc    58.  1.100 / 58.  1.100
+Splitting the commandline.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-r' ... matched as option 'r' (override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)) with argument '60'.
+Reading option '-f' ... matched as option 'f' (force container format (auto-detected otherwise)) with argument 'image2pipe'.
+Reading option '-vcodec' ... matched as option 'vcodec' (alias for -c:v (select encoder/decoder for video streams)) with argument 'ppm'.
+Reading option '-i' ... matched as input url with argument 'pipe:'.
+Reading option '-vcodec' ... matched as option 'vcodec' (alias for -c:v (select encoder/decoder for video streams)) with argument 'libx264'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'ultrafast'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-crf' ... matched as AVOption 'crf' with argument '1'.
+Reading option '-threads' ... matched as AVOption 'threads' with argument '0'.
+Reading option 'output.mp4' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option y (overwrite output files) with argument 1.
+Applying option report (generate a report) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url pipe:.
+Applying option r (override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)) with argument 60.
+Applying option f (force container format (auto-detected otherwise)) with argument image2pipe.
+Applying option vcodec (alias for -c:v (select encoder/decoder for video streams)) with argument ppm.
+Successfully parsed a group of options.
+Opening an input file: pipe:.
+[image2pipe @ 0000023707451fc0] Opening 'pipe:' for reading
+[pipe @ 0000023707452e80] Setting default whitelist 'crypto,data'

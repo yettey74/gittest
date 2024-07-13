@@ -416,3 +416,7 @@
 1720846157|yettey74|D|/serer.txt
 1720846157|yettey74|M|/src/CMakeLists.txt
 1720846157|yettey74|M|/src/main.cpp
+1720855722|yettey74|A|/combined.txt
+1720855722|yettey74|A|/log1.txt
+1720855722|yettey74|A|/log2.txt
+1720855883|yettey74|A|/gource_batch.ps1
