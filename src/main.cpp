@@ -109,10 +109,10 @@ int main() {
 
     // Create and set up the network manager
         NetworkManager networkManager;
-        if (!networkManager.connectToServer("127.0.0.1", 53000)) {
-            std::cerr << "Error Connecting to 127.0.0.1 on port 5300\n";
-            return -1;
-        }
+        // if (!networkManager.connectToServer("127.0.0.1", 53000)) {
+        //     std::cerr << "Error Connecting to 127.0.0.1 on port 53000\n";
+        //     return -1;
+        // }
 
     ScreenType currentScreen = MAIN_MENU;
 
